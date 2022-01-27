@@ -1,19 +1,46 @@
-const { species } = require('../data/zoo_data');
+const { species, hours } = require('../data/zoo_data');
+
+const allDays = Object.keys(hours);
+
+const allAnimals = species.map((animal) => animal.name);
+
+const frase = (day) => `Open from ${hours[day].open}am until ${hours[day].close}pm`;
+
+const animais = (day) => species.filter((animal) => animal.availability.includes(day))
+  .map((animal) => animal.name);
+
+const obj = {};
+
+const defaultTest = () => {
+  allDays.forEach((day) => {
+    obj[day] = {
+      officeHour: frase(day),
+      exhibition: animais(day) };
+    if (day === 'Monday') {
+      obj[day] = {
+        officeHour: 'CLOSED',
+        exhibition: 'The zoo will be closed!' };
+    }
+  });
+  return obj;
+};
 
 function getSchedule(scheduleTarget) {
-  // separar em partes
-  // o que consigo fazer primeiro? 1 puxar o array com os dias quando o parametro for animal e fazer o Monday.
+  if (scheduleTarget === 'Monday') {
+    return { Monday: { officeHour: 'CLOSED',
+      exhibition: 'The zoo will be closed!' } };
+  }
 
-  const allAnimals = species.map((animal) => animal.name);
   if (allAnimals.includes(scheduleTarget)) {
     return species.find((animal) => animal.name === scheduleTarget).availability;
   }
-  // preparar officeHour, preciso fazer template literals com os objetos de cada dia.
-  // preparar exhibition filtrando os animais que estão no dia
-  // const allDays = Object.keys(hours);
-  // if (allDays.includes(scheduleTarget)) {
-  //   return { scheduleTarget: { officeHour, exhibition } };
-  // }
+
+  if (allDays.includes(scheduleTarget)) {
+    return { [scheduleTarget]: { officeHour: frase(scheduleTarget),
+      exhibition: animais(scheduleTarget) } };
+  }
+
+  return defaultTest();
 }
-console.log(getSchedule('lions'));
+console.log(getSchedule());
 module.exports = getSchedule;
