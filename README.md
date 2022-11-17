@@ -1,13 +1,10 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h1 align="center">:zebra: Zoo Functions :lion: </h1>
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## 📰 Sobre o projeto
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+O objetivo desse projeto foi desenvolver um código legível, conciso e expressivo utilizando as novas funcionalidades do ES6. Utilizar as Higher Order Functions para manipular e criar arrays. Escolher a Higher Order Function mais adequada para a obtenção de um resultado esperado. Aprender a usar de forma conjunta as Higher Order Functions e por fim, interpretar testes unitários e produzir soluções que atendam a eles.
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+-  **[Higher Order Functions](https://eloquentjavascript.net/05_higher_order.html)**
